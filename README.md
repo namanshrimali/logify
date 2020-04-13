@@ -64,9 +64,9 @@ mvn clean build
 
 
 ## Meta
-
+You can reach out to me or see other projects I've been working on 
 Naman Shrimali – [Twitter](https://twitter.com/namanshrimali) – [Gmail](namanshrimali@gmail.com)
-[https://github.com/namanshrimali/](Github)
+[Github](https://github.com/namanshrimali/)
 
 ## Contributing
 

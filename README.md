@@ -41,10 +41,11 @@ After the changes are made, go to the parent directory of the application and ex
 mvn clean build
 ```
 If you're building both the front end and the back-end manually,
-* For front-end
+* For front-end (Angular)
 ```sh
 ng build --prod
 ```
+* For back-end (Spring Boot)
 ```sh
 mvn clean build
 ```

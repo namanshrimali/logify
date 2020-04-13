@@ -65,7 +65,7 @@ mvn clean build
 
 ## Meta
 
-Naman Shrimali – [Twitter](https://twitter.com/namanshrimali) – [Gmail] (namanshrimali@gmail.com)
+Naman Shrimali – [Twitter](https://twitter.com/namanshrimali) – [Gmail](namanshrimali@gmail.com)
 [https://github.com/namanshrimali/](Github)
 
 ## Contributing

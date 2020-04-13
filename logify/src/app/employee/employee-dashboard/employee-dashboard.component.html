@@ -1,0 +1,54 @@
+<div class="employee-container">
+    <div class="log-time-trigger" *ngIf="!isLoading">
+        <div *ngIf="hasDayEnded; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+            <span id="greeting">You're done for the day !</span>
+            <span id="character">\(◕◡◕)/</span>
+          
+        </ng-template>
+        <ng-template #elseBlock>
+            <div *ngIf="hasDayStarted; then endBlock else startBlock"></div>
+                <ng-template #endBlock>
+                    <span id="greeting">Hi Again ! Done for the day ?</span>
+                    <button mat-raised-button color="primary" (click)="endLogging()">Log Off</button>
+                </ng-template>
+            <ng-template #startBlock>
+                <span id="greeting">Welcome ! Start logging your time for the day</span>
+                <button mat-raised-button color="primary" (click)="startLogging()">Start</button>
+            </ng-template>        
+        </ng-template>
+    </div>
+    <div class="log-history">
+        <h2>HISTORY</h2>
+        <div class="mat-elevation-z2">
+            <table mat-table [dataSource]="dataSource" matSort >
+
+                <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+                    <td mat-cell *matCellDef="let row"> {{row.startTime | date:'MMM dd'}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="startTime">
+                    <th mat-header-cell *matHeaderCellDef> Start </th>
+                    <td mat-cell *matCellDef="let row"> {{row.startTime | date:'shortTime'}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="endTime">
+                    <th mat-header-cell *matHeaderCellDef> End </th>
+                    <td mat-cell *matCellDef="let row"> {{row.endTime | date:'shortTime'}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="total">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Hours </th>
+                    <td mat-cell *matCellDef="let row"> {{row.total}}</td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                </tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        </div>
+    </div>
+</div>

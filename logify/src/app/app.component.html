@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row  class="mat-elevation-z8">
+        <span>LOGIFY</span>
+        <span class="example-spacer"></span>
+        <span id="logout" *ngIf="isUserLoggedIn" (click)="logout()">Logout</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="content">
+    <router-outlet></router-outlet>
+</div>
+<div class="footer">
+    <span>Made by Naman Shrimali</span>
+</div>

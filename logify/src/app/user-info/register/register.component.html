@@ -1,0 +1,56 @@
+<form [formGroup]="userInfo" style="display: flex; flex-direction: column;">
+    <mat-form-field floatLabel="auto" appearance="outline">
+        <mat-label>Name</mat-label>
+        <input placeholder="Enter your full name " matInput formControlName="name" autofocus>
+        <mat-error *ngIf="userInfo.get('name').hasError('required')">
+            Name is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="userInfo.get('name').hasError('maxlength')">
+            Name must be at most 40 characters
+        </mat-error>
+        <mat-error *ngIf="userInfo.get('name').hasError('minlength')">
+            Name must be at least 5 characters
+        </mat-error>
+        <mat-error *ngIf="userInfo.get('name').hasError('pattern')">
+            Please enter a valid name
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field floatLabel="auto" appearance="outline">
+        <mat-label>Username</mat-label>
+        <input placeholder="Should be between 5-40 characters" matInput formControlName="username" (keyup)="checkIfAvailable()" autocomplete="off">
+        <span matSuffix class="material-icons" id="check" *ngIf="!isUserNameTaken && !areIconsDisabled" matTooltip="Username is available">check</span>
+        <span matSuffix class="material-icons" id="error"*ngIf="isUserNameTaken" matTooltip="Username is taken, Please choose another username">error</span>
+        <mat-error *ngIf="userInfo.get('username').hasError('required')">
+            Username is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="userInfo.get('username').hasError('minlength')">
+            Username should be atleast 5 characters
+        </mat-error>
+        <mat-error *ngIf="userInfo.get('username').hasError('maxlength')">
+            Username should be atmost 20 characters
+        </mat-error>
+        <mat-error *ngIf="userInfo.get('username').hasError('pattern')">
+            Please enter a valid username
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field floatLabel="auto" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input placeholder="Should be atleast 8 characters" matInput autocomplete="off" formControlName="password" [type]="hide ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error *ngIf="userInfo.get('password').hasError('required')">
+            Password is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="userInfo.get('password').hasError('pattern')">
+            Please enter a valid Password
+        </mat-error>
+        <mat-error *ngIf="userInfo.get('password').hasError('minlength')">
+            Password should be atleast 8 characters
+        </mat-error>
+        <mat-error *ngIf="userInfo.get('password').hasError('maxlength')">
+            Password should be atmost 20 characters
+        </mat-error>
+    </mat-form-field>
+    <button mat-raised-button type="submit" (click)="registerUser()" mat-button color="primary" [disabled]="!userInfo.valid || isUserNameTaken">Sign Up</button>
+</form>

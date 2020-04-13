@@ -26,12 +26,33 @@ npm install npm@latest -g
 ```
 
 Windows:
-You can download and install the same from 
+You can download and install all the required softwares from 
 * https://maven.apache.org/download.cgi
 * https://nodejs.org/en/download/
+* https://www.npmjs.com/get-npm
+* https://www.java.com/en/download/
+
+
+## Deployment setup
+Before deploying the application over to your host, make sure you update your host address (hostname and the port where backend is deployed), eg: http(s)://hostname:portname in the angular services.
+After the changes are made, go to the parent directory of the application and execute, so that all all the code is built and packaged.
+
 ```sh
-npm install npm@latest -g
+mvn clean build
 ```
+If you're building both the front end and the back-end manually,
+* For front-end
+```sh
+ng build --prod
+```
+```sh
+mvn clean build
+```
+
+    
+## Upcoming Features
+* Admins can clock their working time too
+* Generate an excel based report on request
 
 ## Release History
 * 0.1.0
@@ -40,14 +61,11 @@ npm install npm@latest -g
 * 0.0.1
     * Work in progress
 
-## Upcoming Features
-* Admins can clock their working time too
-* Generate an excel based report on request
 
 ## Meta
 
-Naman Shrimali – [@naman.shrimali](https://twitter.com/naman.shrimali) – namanshrimali@gmail.com
-[https://github.com/namanshrimali/logify](https://github.com/namanshrimali/)
+Naman Shrimali – [Twitter](https://twitter.com/namanshrimali) – [Gmail] (namanshrimali@gmail.com)
+[https://github.com/namanshrimali/](Github)
 
 ## Contributing
 

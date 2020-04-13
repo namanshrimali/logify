@@ -29,7 +29,7 @@ Windows:
 You can download and install the same from 
 * https://maven.apache.org/download.cgi
 * https://nodejs.org/en/download/
-* ```sh
+```sh
 npm install npm@latest -g
 ```
 
@@ -46,7 +46,7 @@ npm install npm@latest -g
 
 ## Meta
 
-Naman Shrimali – [@YourTwitter](https://twitter.com/dbader_org) – namanshrimali@gmail.com
+Naman Shrimali – [@naman.shrimali](https://twitter.com/naman.shrimali) – namanshrimali@gmail.com
 [https://github.com/namanshrimali/logify](https://github.com/namanshrimali/)
 
 ## Contributing

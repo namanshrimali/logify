@@ -1,5 +1,5 @@
 # Logify
-> Logify is an Attendance Management System for a team, that helps stake holders in a team to log and maintain their work records with ease
+> Logify is an Employee Management System for a team, that helps stake holders in a team to log and maintain their work records with ease
 
 ## Features
 * Application supports jwt role based authorization, categorizing the users in 'Admin' and 'Users'
